@@ -55,7 +55,7 @@ void main() {
   print("\n The Second highest and lowest numbers are   : $result");
  */
   //Q5: Write a Dart function that accepts two arguments, a string and a letter and thefunction will count the number of occurrences of the specified letter within the string
-  stdout.write("Enter a String  :  \n");
+/*   stdout.write("Enter a String  :  \n");
   String? sentance = (stdin.readLineSync()!);
   stdout.write("Enter a letter to find  out occurrences of a letter  :  \n");
   String? letter = (stdin.readLineSync()!);
@@ -63,7 +63,16 @@ void main() {
   int result = letterOccurences(sentance, letter);
 
   print("\n The Given Sentance is   : $sentance");
-  print("\n Occurences is    : $result");
+  print("\n Occurences is    : $result"); */
+
+  // Q6: Write a Dart function that accept a list of country names as input and returns the longest country name as output.
+
+  List<String> countries = ["Australia", "Germany", "United States of America"];
+
+  String result = longestName(countries);
+
+  print("\n The Given List is   : $countries");
+  print("\n Longest name is    : $result");
 }
 
 bool palindrome(word) {
@@ -132,4 +141,16 @@ int letterOccurences(sentance, letter) {
   }
 
   return res;
+}
+
+String longestName(list) {
+  int longestCountry = 0;
+  String name = '';
+  for (int i = 0; i < list.length; i++) {
+    if (list[i].length > longestCountry) {
+      name = list[i];
+    }
+  }
+
+  return name;
 }
