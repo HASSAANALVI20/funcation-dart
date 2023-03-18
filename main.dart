@@ -28,13 +28,37 @@ void main() {
 
   // Write a Dart function that accepts a string as a parameter and converts the first letter of each word of the string in upper case.
 
-  stdout
+/*   stdout
       .write("\nEnter a letters for to convert first letter to upper case \n");
   String? sentence = stdin.readLineSync();
 
   String result = firstLetterUpperCase(sentence);
   print("\n The given Letter is   : $sentence");
   print("\n The First word of each letter is uppercase are  : $result");
+ */
+
+//Q4: Write a Dart function which will take an array of numbers stored and find the second lowest and second greatest numbers, respec
+/* 
+  String? sentence = stdin.readLineSync();
+
+  String result = firstLetterUpperCase(sentence);
+  print("\n The given Letter is   : $sentence");
+  print("\n The First word of each letter is uppercase are  : $result"); */
+
+  stdout.write("\nEnter a lenght of list  \n");
+  int? length = int.parse(stdin.readLineSync()!);
+
+  List<String> number = [];
+
+  for (var i = 1; i <= length; i++) {
+    stdout.write("Enter a number : ${i}  \n");
+    String? n = (stdin.readLineSync()!);
+    number.add('${n}');
+  }
+
+  List result = sortedSecondHighestnLowest(number);
+  print("\n The Given list is   : $number");
+  print("\n The Second highest and lowest numbers are   : $result");
 }
 
 bool palindrome(word) {
@@ -82,4 +106,13 @@ String firstLetterUpperCase(word) {
   return result;
 }
 
-List sortedSecondHighestnLowest() {}
+List sortedSecondHighestnLowest(number) {
+  List<String> result = [];
+
+  int l = number.length;
+  l = l - 2;
+  number.sort();
+  result.add(number[1]);
+  result.add(number[l]);
+  return result;
+}
