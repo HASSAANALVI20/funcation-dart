@@ -15,7 +15,7 @@ void main() {
     print("\n The given word is Not palindrome  : $word");
   } */
 
-  // Write a Dart function that returns a passed string with letters in alphabetical orders.
+  //2 Write a Dart function that returns a passed string with letters in alphabetical orders.
 
 /* 
  stdout.write(
@@ -26,7 +26,7 @@ void main() {
   print("\n The given word is   : $word");
   print("\n The alphabetical sord word is  : $result"); */
 
-  // Write a Dart function that accepts a string as a parameter and converts the first letter of each word of the string in upper case.
+  //3 Write a Dart function that accepts a string as a parameter and converts the first letter of each word of the string in upper case.
 
 /*   stdout
       .write("\nEnter a letters for to convert first letter to upper case \n");
@@ -38,14 +38,8 @@ void main() {
  */
 
 //Q4: Write a Dart function which will take an array of numbers stored and find the second lowest and second greatest numbers, respec
-/* 
-  String? sentence = stdin.readLineSync();
 
-  String result = firstLetterUpperCase(sentence);
-  print("\n The given Letter is   : $sentence");
-  print("\n The First word of each letter is uppercase are  : $result"); */
-
-  stdout.write("\nEnter a lenght of list  \n");
+/*   stdout.write("\nEnter a lenght of list  \n");
   int? length = int.parse(stdin.readLineSync()!);
 
   List<String> number = [];
@@ -59,6 +53,17 @@ void main() {
   List result = sortedSecondHighestnLowest(number);
   print("\n The Given list is   : $number");
   print("\n The Second highest and lowest numbers are   : $result");
+ */
+  //Q5: Write a Dart function that accepts two arguments, a string and a letter and thefunction will count the number of occurrences of the specified letter within the string
+  stdout.write("Enter a String  :  \n");
+  String? sentance = (stdin.readLineSync()!);
+  stdout.write("Enter a letter to find  out occurrences of a letter  :  \n");
+  String? letter = (stdin.readLineSync()!);
+
+  int result = letterOccurences(sentance, letter);
+
+  print("\n The Given Sentance is   : $sentance");
+  print("\n Occurences is    : $result");
 }
 
 bool palindrome(word) {
@@ -115,4 +120,16 @@ List sortedSecondHighestnLowest(number) {
   result.add(number[1]);
   result.add(number[l]);
   return result;
+}
+
+int letterOccurences(sentance, letter) {
+  List<String> value = (sentance.split(""));
+  int res = 0;
+  for (int i = 0; i < value.length; i++) {
+    if (value[i] == letter) {
+      res++;
+    }
+  }
+
+  return res;
 }
